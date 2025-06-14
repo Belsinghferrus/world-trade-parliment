@@ -1,40 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WTP</title>
+  <title>World Trade Parliament</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
       --primary-color: #0b3d91;
     }
   </style>
+
+  <!-------------------- L I N K S  ------------------------------>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <!-- Tailwind CSS (via CDN for demo; use postcss for production) -->
-<script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- Font Awesome for Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com"></script>
-
-<!-- AOS -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-
-<!-- Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body class="font-sans text-gray-800">
 
+<body class="font-sans text-gray-800">
   <!-- Navbar -->
-  <header class="bg-[--primary-color] text-white">
+  <header class="bg-[--primary-color] text-white fixed w-full z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <!-- Logo -->
       <div class="font-bold text-lg">WTP LOGO</div>
-      <nav class="space-x-6 text-sm hidden md:block">
+      <!-- Hamburger Icon -->
+      <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 text-sm">
         <a href="#about" class="hover:underline">About</a>
         <a href="#structure" class="hover:underline">Structure</a>
         <a href="#wing" class="hover:underline">Wing</a>
@@ -42,328 +52,414 @@
         <a href="#constitution" class="hover:underline">Constitution</a>
         <a href="#join" class="hover:underline">Join Us</a>
         <a href="#contact" class="hover:underline">Contact Us</a>
-
       </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+      class="hidden fixed inset-0 bg-[--primary-color] text-white flex flex-col items-center justify-center space-y-6 text-lg font-medium transition-all duration-300">
+      <a href="#about" class="hover:underline mobile-link">About</a>
+      <a href="#structure" class="hover:underline mobile-link">Structure</a>
+      <a href="#wing" class="hover:underline mobile-link">Wing</a>
+      <a href="#principle" class="hover:underline mobile-link">Principle</a>
+      <a href="#constitution" class="hover:underline mobile-link">Constitution</a>
+      <a href="#join" class="hover:underline mobile-link">Join Us</a>
+      <a href="#contact" class="hover:underline mobile-link">Contact Us</a>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="bg-[--primary-color] text-white min-h-screen flex items-center">
     <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
-      
+
       <!-- Text Content -->
       <div class="md:w-1/2 space-y-4">
-        <p id="animated-slogan"  class="uppercase text-sm tracking-wider">True Capitalism.</p>
         <!------- ANIMATED--------->
+        <p id="animated-slogan" class="uppercase text-sm tracking-wider">True Capitalism.</p>
         <br>
         <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
-          World Trade Parliament: Championing Global Entrepreneurs for a Fairer World
-        </h1>     
-        <br>   
+          World Trade Parliament <br> Championing Global Entrepreneurs for a Fairer World
+        </h1>
+        <br>
         <p class="text-base md:text-lg text-gray-100">
           Dismantling Cronyism, Ensuring Equitable Opportunity, and Fostering Freedom for Every Business and Nation.
         </p>
-        
+
         <div class="flex gap-4 pt-4">
-          <button class=" bg-white text-[--primary-color] px-6 py-2 rounded-full font-semibold hover:bg-gray-300">Learn More</button>
-          <button class="bg-white text-[--primary-color] px-6 py-2 rounded-full font-semibold hover:bg-gray-300">Join Now</button>
+          <button onclick="location.href='#about'"
+            class=" bg-white text-[--primary-color] px-6 py-2 rounded-full font-semibold hover:bg-gray-300">Explore</button>
+          <button onclick="location.href='#join'"
+            class="bg-white text-[--primary-color] px-6 py-2 rounded-full font-semibold hover:bg-gray-300">Join
+            Now</button>
         </div>
       </div>
       <div class="md:w-1/2">
-        <img src="https://picsum.photos/800/700" alt="Global Business" class="rounded-xl shadow-xl w-full h-auto">
+        <img loading="lazy" src="https://picsum.photos/500/300" alt="Global Business"
+          class="rounded-lg shadow-md w-full h-auto" />
       </div>
     </div>
   </section>
 
   <!-- About & Purpose Section -->
-  <section data-aos="fade-up" class="py-12 px-4 max-w-7xl mx-auto space-y-12">
 
+  <!-- About Section -->
+  <section id="about" class="py-12 px-4 max-w-7xl mx-auto space-y-12">
     <!-- About Us -->
-    <div id="about" class="text-center">
+    <div class="text-center">
       <h2 class="text-xl font-bold text-[--primary-color] mb-2">About Us</h2>
+      <h2 class="text-2xl sm:text-3xl font-bold text-blue-800">
+        A New Era for Global Trade: The World Trade Parliament
+      </h2>
+      <br />
       <p class="text-gray-700 max-w-3xl mx-auto">
-        We are the World Trade Parliament (WTP), a unique, non-governmental, business-centric LLC, 
-        leading the charge for ethical and equitable global commerce.
+        We are the World Trade Parliament (WTP), a unique, non-governmental, business-centric LLC, leading the charge
+        for ethical and equitable global commerce.
       </p>
     </div>
 
     <!-- Our Purpose -->
-    <div class="flex flex-col md:flex-row items-center gap-8">
-      <div class="md:w-1/2 space-y-4">
+    <div class="flex flex-col md:flex-row items-center gap-10">
+      <!-- Text First on Mobile -->
+      <div class="md:w-1/2 order-1 md:order-none space-y-4">
         <h3 class="text-lg font-bold text-[--primary-color]">Our Purpose</h3>
-        <p class="text-gray-700 text-sm">
-          To foster a global economic ecosystem where true capitalism – characterized by fair competition and widespread entrepreneurial opportunity – flourishes, thereby lifting individuals from poverty and empowering nations with genuine freedom. 
-          We are fundamentally opposed to crony capitalism, which enslaves governments, disrupts markets, produces poor-quality jobs, and ultimately stifles the universal human potential for business creation and innovation.
+        <p class="text-gray-700 text-md leading-relaxed">
+          To foster a global economic ecosystem where true capitalism – characterized by fair competition and widespread
+          entrepreneurial opportunity – flourishes, thereby lifting individuals from poverty and empowering nations with
+          genuine freedom. We are fundamentally opposed to crony capitalism, which enslaves governments, disrupts
+          markets, produces poor-quality jobs, and ultimately stifles the universal human potential for business
+          creation and innovation.
         </p>
       </div>
-      <div class="md:w-1/2">
-        <img src="https://picsum.photos/500/300" alt="Global Business" class="rounded-lg shadow-md w-full h-auto">
+
+      <!-- Image Second on Mobile -->
+      <div class="md:w-1/2 order-2">
+        <img loading="lazy" src="https://picsum.photos/500/300" alt="Global Business"
+          class="rounded-lg shadow-md w-full h-auto" />
       </div>
     </div>
   </section>
 
   <!-- Vision Section -->
-<section class="py-12 bg-white px-4 max-w-7xl mx-auto">
-  <div class="flex flex-col md:flex-row items-center gap-10">
-    
-    <!-- Image -->
-    <div class="md:w-1/2">
-      <img src="https://picsum.photos/500/300" alt="Vision" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out">
-    </div>
-
-    <!-- Vision Text -->
-    <div class="md:w-1/2">
-      <h2 class="text-xl font-bold text-[--primary-color] mb-4">Our Vision</h2>
-      <p class="text-gray-700 text-sm leading-relaxed">
-        To foster a global economic ecosystem where true capitalism – characterized by fair competition and widespread entrepreneurial opportunity – flourishes, thereby lifting individuals from poverty and empowering nations with genuine freedom.
-        We are fundamentally opposed to crony capitalism, which enslaves governments, disrupts markets, produces poor-quality jobs, and ultimately stifles the universal human potential for business creation and innovation.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- Mission Section -->
-<section class="py-12 bg-gray-50 px-4 max-w-7xl mx-auto">
-  <h2 class="text-xl font-bold text-center text-[--primary-color] mb-10">Our Mission</h2>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- Mission Card x6 -->
-    <template id="mission-card-template">
-      <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200">
-        <h3 class="font-semibold text-[--primary-color] mb-2">Dismantling Crony Capitalism:</h3>
-        <p class="text-sm text-gray-700 leading-relaxed">
-          Actively combating structures that allow a select few to control governments, secure preferential funding, waive colossal debts, and burden entrepreneurs.
+  <section class="py-12 bg-white px-4 max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row-reverse items-center gap-10">
+      <!-- Text First on Mobile -->
+      <div class="md:w-1/2 order-1 md:order-none space-y-4">
+        <h2 class="text-xl font-bold text-[--primary-color]">Our Vision</h2>
+        <p class="text-gray-700 text-md leading-relaxed">
+          To be the preeminent global force for inclusive capitalism, envisioning a world teeming with a high quality
+          and vast quantity of diverse business people, rather than a few powerful entities dominating markets. We
+          strive for a future where every individual, regardless of nationality or background, has an equal chance to
+          contribute to the global economy as an entrepreneur, leading to truly free governments and prosperous nations
+          unburdened by undue influence.
         </p>
       </div>
-    </template>
 
-    <!-- Repeat 6 times using JS or manually for now -->
-    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200">
-      <h3 class="font-semibold text-[--primary-color] mb-2">Dismantling Crony Capitalism:</h3>
-      <p class="text-sm text-gray-700 leading-relaxed">
-        Actively combating structures that allow a select few to control governments, secure preferential funding, waive colossal debts, and burden entrepreneurs.
-      </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200">
-      <h3 class="font-semibold text-[--primary-color] mb-2">Dismantling Crony Capitalism:</h3>
-      <p class="text-sm text-gray-700 leading-relaxed">
-        Actively combating structures that allow a select few to control governments, secure preferential funding, waive colossal debts, and burden entrepreneurs.
-      </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200">
-      <h3 class="font-semibold text-[--primary-color] mb-2">Dismantling Crony Capitalism:</h3>
-      <p class="text-sm text-gray-700 leading-relaxed">
-        Actively combating structures that allow a select few to control governments, secure preferential funding, waive colossal debts, and burden entrepreneurs.
-      </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200">
-      <h3 class="font-semibold text-[--primary-color] mb-2">Dismantling Crony Capitalism:</h3>
-      <p class="text-sm text-gray-700 leading-relaxed">
-        Actively combating structures that allow a select few to control governments, secure preferential funding, waive colossal debts, and burden entrepreneurs.
-      </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200">
-      <h3 class="font-semibold text-[--primary-color] mb-2">Dismantling Crony Capitalism:</h3>
-      <p class="text-sm text-gray-700 leading-relaxed">
-        Actively combating structures that allow a select few to control governments, secure preferential funding, waive colossal debts, and burden entrepreneurs.
-      </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200">
-      <h3 class="font-semibold text-[--primary-color] mb-2">Dismantling Crony Capitalism:</h3>
-      <p class="text-sm text-gray-700 leading-relaxed">
-        Actively combating structures that allow a select few to control governments, secure preferential funding, waive colossal debts, and burden entrepreneurs.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-<section class="bg-white px-4 py-16 max-w-7xl mx-auto">
-  <!-- Title and Intro -->
-  <div class="text-center mb-12">
-    <h3 class="text-sm font-semibold text-blue-700">Our Structure</h3>
-
-    <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 mb-4">
-      Empowering the World's Business Voices: Our Two-House Parliament
-    </h2>
-    <p class="text-gray-700 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
-      The WTP employs an innovative two-house parliamentary system, designed for comprehensive representation, direct grassroots input, and effective policy formulation that directly engages governments.
-    </p>
-  </div>
-
-  <!-- Two House Cards -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-    <!-- House 1 -->
-    <div class="border border-gray-300 rounded-xl p-6 flex flex-col bg-white shadow-sm hover:shadow-md transition">
-      <div class="mb-4">
-        <p class="text-sm font-semibold text-gray-700">House 1</p>
-        <h3 class="text-base font-bold text-gray-900">The Global Business Council (GBC)</h3>
+      <!-- Image Second on Mobile -->
+      <div class="md:w-1/2 order-2">
+        <img src="https://picsum.photos/500/300" alt="Vision" loading="lazy"
+          class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out w-full h-auto" />
       </div>
-      <h4 class="text-blue-800 font-semibold mb-2 text-sm">The Voice of Global Entrepreneurs</h4>
-      <p class="text-gray-700 text-sm mb-4 leading-relaxed">
-        This house, comprised of WBIZNEX members from around the world, is the vibrant forum where real-world business challenges are identified, issues are debated, and preliminary resolutions are forged from the ground up.
-      </p>
-      <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-        <li>Global representation</li>
-        <li>Issue identification</li>
-        <li>Solution brainstorming</li>
-        <li>Resolution drafting</li>
-      </ul>
     </div>
+  </section>
 
-    <!-- House 2 -->
-    <div class="border border-gray-300 rounded-xl p-6 flex flex-col bg-gray-100 shadow-sm hover:shadow-md transition">
-      <div class="mb-4">
-        <p class="text-sm font-semibold text-gray-700">House 2</p>
-        <h3 class="text-base font-bold text-gray-900">The Global Policy & Diplomatic Council (GPDC)</h3>
+
+
+  <!-- Mission Section -->
+  <section class="py-12 bg-gray-50 px-4 max-w-7xl mx-auto">
+    <h2 class="text-xl font-bold text-center text-[--primary-color] mb-10">Our Mission</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Mission Card x6 -->
+      <template id="mission-card-template">
+        <div
+          class="bg-white p-6 rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+          <h3 class="font-semibold text-[--primary-color] mb-2">Dismantling Crony Capitalism:</h3>
+          <p class="text-sm text-gray-700 leading-relaxed">
+            Actively combating structures that allow a select few to control governments, secure preferential funding,
+            waive colossal debts, and burden entrepreneurs.
+          </p>
+        </div>
+      </template>
+
+      <div
+        class="bg-white p-6 rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+        <h3 class="font-semibold text-[--primary-color] mb-2">Dismantling Crony Capitalism:</h3>
+        <p class="text-sm text-gray-700 leading-relaxed">
+          Actively combating structures that allow a select few to control governments, secure preferential funding,
+          waive colossal debts, and burden entrepreneurs.
+        </p>
       </div>
-      <h4 class="text-blue-800 font-semibold mb-2 text-sm">Shaping Policy, Engaging Diplomacy</h4>
-      <p class="text-gray-700 text-sm mb-4 leading-relaxed">
-        Composed primarily of WIIBA-trained members, this house refines GBC resolutions into actionable policy proposals. It serves as WTP's diplomatic arm, advocating for proposals with governments and diplomats.
-      </p>
-      <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
-        <li>Policy structuring</li>
-        <li>Diplomatic negotiation</li>
-        <li>Leveraging WIIBA expertise</li>
-        <li>Engagement with government views</li>
-      </ul>
+
+      <div
+        class="bg-white p-6 rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+        <h3 class="font-semibold text-[--primary-color] mb-2">Protecting Traders in Conflict Zones</h3>
+        <p class="text-sm text-gray-700 leading-relaxed">
+          Challenging punitive trade taxes on innocent businesses affected by geopolitical conflicts.
+        </p>
+      </div>
+
+      <div
+        class="bg-white p-6 rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+        <h3 class="font-semibold text-[--primary-color] mb-2">Promoting Entrepreneurial Growth</h3>
+        <p class="text-sm text-gray-700 leading-relaxed">
+          Championing high-quality business opportunities to increase the global population of independent business
+          people.
+        </p>
+      </div>
+
+      <div
+        class="bg-white p-6 rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+        <h3 class="font-semibold text-[--primary-color] mb-2">Ensuring Government Independence</h3>
+        <p class="text-sm text-gray-700 leading-relaxed">
+          Fostering markets where a multitude of capitalists prevents the enslavement of public institutions by powerful
+          interests.
+        </p>
+      </div>
+
+      <div
+        class="bg-white p-6 rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+        <h3 class="font-semibold text-[--primary-color] mb-2">Equal Opportunity for All</h3>
+        <p class="text-sm text-gray-700 leading-relaxed">
+          Amplifying the voice of business opportunities for every nationality, ensuring merit, not political sway,
+          dictates success.
+        </p>
+      </div>
+
+      <div
+        class="bg-white p-6 rounded-xl shadow-md hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-200">
+        <h3 class="font-semibold text-[--primary-color] mb-2">Global Networking and Collaboration</h3>
+        <p class="text-sm text-gray-700 leading-relaxed">
+          Facilitating an inclusive ecosystem for shared growth and genuine economic freedom through WBIZNEX.
+        </p>
+      </div>
     </div>
-  </div>
-
-  <!-- Voting System Full Width -->
-  <div class="bg-[--primary-color] text-white rounded-xl p-8 text-center shadow-lg">
-    <h3 class="text-lg font-semibold mb-3">Our Unique Voting System</h3>
-    <p class="text-sm max-w-2xl mx-auto leading-relaxed">
-      Our voting on issues is restricted to members whose businesses or regions are directly and demonstrably affected by the matter.
-      This prevents external "muscle power" and ensures fair, relevant outcomes, prioritizing genuine impact over geopolitical influence.
-    </p>
-    <div class="mt-6">
-      <button class="bg-white text-[--primary-color] px-6 py-2 rounded-full font-semibold shadow-md hover:shadow-lg transition">
-        Learn More
-      </button>
-    </div>
-  </div>
-</section>
+  </section>
 
 
-<section id="wing" class="bg-white px-4 py-16 max-w-7xl mx-auto">
-  <!-- Title and Subtitle -->
-  <div class="text-center mb-12">
-    <h3 class="text-sm font-semibold text-blue-700">Our Wing</h3>
-    <h2 class="text-2xl sm:text-3xl font-bold text-blue-800">Empowering Your Global Journey</h2>
-    <p class="text-base font-semibold text-black mt-2">The Pillars of World Trade Parliament</p>
-  </div>
-
-  <!-- Cards -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    <!-- WBIZNEX Card -->
-    <div class="bg-white border border-gray-300 rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 ease-in-out">
-      <h4 class="text-blue-800 font-bold text-sm mb-2">WBIZNEX (World Business Nexus)</h4>
-      <img src="https://picsum.photos/500/300?grayscale&1" alt="WBIZNEX" class="rounded-xl mb-4 w-full object-cover h-52">
-      <h5 class="font-semibold text-sm mb-2 text-black">Connect, Collaborate, Conquer:<br>The Global Business Network</h5>
-      <p class="text-gray-700 text-sm mb-3 leading-relaxed">
-        WBIZNEX is WTP’s dynamic business networking wing, fostering unparalleled global connections. It provides the platform for business people worldwide to connect, share insights, find opportunities, and become active members of the Global Business Council.
-      </p>
-      <p class="text-sm font-semibold text-black">
-        Extensive B2B networking, access to global markets, collective problem-solving, pathway to GBC membership.
-      </p>
-    </div>
-
-    <!-- WIIBA Card -->
-    <div class="bg-white border border-gray-300 rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 ease-in-out">
-      <h4 class="text-blue-800 font-bold text-sm mb-2">WIIBA (World Institute of International Business Accomplishments)</h4>
-      <img src="https://picsum.photos/500/300?2" alt="WIIBA" class="rounded-xl mb-4 w-full object-cover h-52">
-      <h5 class="font-semibold text-sm mb-2 text-black">Connect, Collaborate, Conquer:<br>The Global Business Network</h5>
-      <p class="text-gray-700 text-sm mb-3 leading-relaxed">
-        WBIZNEX is WTP’s dynamic business networking wing, fostering unparalleled global connections. It provides the platform for business people worldwide to connect, share insights, find opportunities, and become active members of the Global Business Council.
-      </p>
-      <p class="text-sm font-semibold text-black">
-        Extensive B2B networking, access to global markets, collective problem-solving, pathway to GBC membership.
+  <section id="structure" class="bg-white px-4 py-16 max-w-7xl mx-auto">
+    <!-- Title and Intro -->
+    <div class="text-center mb-12">
+      <h3 class="text-md font-semibold text-blue-700">Our Structure</h3>
+      <br>
+      <h2 class="text-2xl sm:text-3xl font-bold text-blue-800 mb-4">
+        Empowering the World's Business Voices: Our Two-House Parliament
+      </h2>
+      <p class="text-gray-700 text-sm sm:text-base max-w-3xl mx-auto leading-relaxed">
+        The WTP employs an innovative two-house parliamentary system, designed for comprehensive representation, direct
+        grassroots input, and effective policy formulation that directly engages governments.
       </p>
     </div>
-  </div>
-</section>
 
-  
+    <!-- Two House Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <!-- House 1 -->
+      <div class="border border-gray-300 rounded-xl p-6 flex flex-col bg-white shadow-sm hover:shadow-md transition">
+        <div class="mb-4">
+          <p class="text-sm font-semibold text-gray-700">House 1</p>
+          <h3 class="text-base font-bold text-gray-900">The Global Business Council (GBC)</h3>
+        </div>
+        <h4 class="text-blue-800 font-semibold mb-2 text-sm">The Voice of Global Entrepreneurs</h4>
+        <p class="text-gray-700 text-sm mb-4 leading-relaxed">
+          This house, composed of WBIZNEX members from around the world, is the vibrant forum where real-world business
+          challenges are identified, issues are debated, and preliminary resolutions are forged from the ground up. It
+          ensures the authentic voice of diverse entrepreneurs shapes our agenda.
+        </p>
+        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+          <li>Global representation</li>
+          <li>Issue identification</li>
+          <li>Solution brainstorming</li>
+          <li>Resolution drafting</li>
+        </ul>
+      </div>
+
+      <!-- House 2 -->
+      <div class="border border-gray-300 rounded-xl p-6 flex flex-col bg-gray-100 shadow-sm hover:shadow-md transition">
+        <div class="mb-4">
+          <p class="text-sm font-semibold text-gray-700">House 2</p>
+          <h3 class="text-base font-bold text-gray-900">The Global Policy & Diplomatic Council (GPDC)</h3>
+        </div>
+        <h4 class="text-blue-800 font-semibold mb-2 text-sm">Shaping Policy, Engaging Diplomacy</h4>
+        <p class="text-gray-700 text-sm mb-4 leading-relaxed">
+          Composed primarily of WIIBA-trained members, this house meticulously refines GBC resolutions into actionable
+          policy proposals. It serves as WTP's diplomatic arm, engaging directly with government representatives and
+          diplomats to present our proposals and advocate for their adoption, ensuring our voice is heard where
+          decisions are made.
+        </p>
+        <ul class="list-disc list-inside text-gray-600 text-sm space-y-1">
+          <li>Policy structuring</li>
+          <li>Diplomatic negotiation</li>
+          <li>Leveraging WIIBA expertise</li>
+          <li>Engagement with government views</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Voting System Full Width -->
+    <div class="bg-[--primary-color] text-white rounded-xl p-8 text-center shadow-lg">
+      <h3 class="text-lg font-semibold mb-3">Our Unique Voting System</h3>
+      <p class="text-sm max-w-2xl mx-auto leading-relaxed">
+        Our voting on issues is restricted to members whose businesses or regions are directly and demonstrably affected
+        by the matter. This prevents external "muscle power" and ensures fair, relevant outcomes, prioritizing genuine
+        impact over geopolitical influence.
+      </p>
+      <div class="mt-6">
+        <button
+          class="bg-white text-[--primary-color] px-6 py-2 rounded-full font-semibold shadow-md hover:shadow-lg transition">
+          Learn More
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="wing" class="bg-white px-4 py-16 max-w-7xl mx-auto">
+    <!-- Title and Subtitle -->
+    <div class="text-center mb-12">
+      <h3 class="text-md font-semibold text-blue-700">Our Wing</h3><br>
+      <h2 class="text-2xl sm:text-3xl font-bold text-blue-800">Empowering Your Global Journey</h2>
+      <p class="text-base font-semibold text-black mt-2">The Pillars of World Trade Parliament <br> Action Through
+        WBIZNEX & WIIBA
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- WBIZNEX Card -->
+      <div
+        class="bg-white border border-gray-300 rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 ease-in-out">
+        <h4 class="text-blue-800 font-bold text-md mb-2">WBIZNEX (World Business Nexus)</h4>
+        <img src="https://picsum.photos/500/300?grayscale&1" alt="WBIZNEX" loading="lazy"
+          class="rounded-xl mb-4 w-full object-cover h-52">
+        <h5 class="font-semibold text-md mb-2 text-black">Connect, Collaborate, Conquer:<br>The Global Business Network
+        </h5>
+        <p class="text-gray-700 text-sm mb-3 leading-relaxed">
+          WBIZNEX is WTP's dynamic business networking wing, fostering unparalleled global connections. It provides the
+          platform for business people worldwide to connect, share insights, find opportunities, and become active
+          members of the Global Business Council.
+        </p>
+        <p class="text-sm font-semibold text-black">
+          Extensive B2B networking, access to global markets, collective problem-solving, pathway to GBC membership.
+        </p>
+      </div>
+
+      <!-- WIIBA Card -->
+      <div
+        class="bg-white border border-gray-300 rounded-2xl p-6 shadow-sm hover:shadow-lg transition duration-300 ease-in-out">
+        <h4 class="text-blue-800 font-bold text-md mb-2">WIIBA (World Institute of International Business
+          Accomplishments)</h4>
+        <img src="https://picsum.photos/500/300?2" alt="WIIBA" loading="lazy"
+          class="rounded-xl mb-4 w-full object-cover h-52">
+        <h5 class="font-semibold text-md mb-2 text-black">Learn, Explore, Lead <br> Mastering International Business
+        </h5>
+        <p class="text-gray-700 text-sm mb-3 leading-relaxed">
+          WIIBA is WTP's transformative educational arm, dedicated to cultivating high-quality, future-proof
+          international business leaders. Our unique 24-month program combines in-depth country-specific market learning
+          with immersive practical exposure across 24 nations, covering international trade laws, rules, and economics.
+        </p>
+        <p class="text-sm font-semibold text-black">
+          Unrivaled global market mastery, practical business connections, leadership development, pathway to GPDC
+          membership, preparing entrepreneurs to thrive in a fair global economy.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
   <section id="principle" class="bg-white py-16 px-4">
     <div class="text-center mb-10">
-      <h3 class="text-blue-700 font-semibold text-sm">Our Core Principles</h3>
+      <h3 class="text-blue-700 font-semibold text-md">Our Core Principles</h3> <br>
       <h2 class="text-blue-800 font-bold text-2xl md:text-3xl">Standing for True Capitalism & Global Integrity</h2>
-      <p class="text-black font-semibold mt-2">The World Trade Parliament Pledge: Fairness, Freedom, and Entrepreneurial Power</p>
+      <p class="text-black font-semibold mt-2">The World Trade Parliament Pledge: Fairness, Freedom, and Entrepreneurial
+        Power</p>
     </div>
-  
+
     <!-- Swiper Container -->
     <div class="relative">
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-          <!-- Slide (Duplicate this block for each card) -->
           <div class="swiper-slide">
-            <div class="h-full bg-white border rounded-xl p-6 transition-all duration-300 ease-in-out hover:bg-[--primary-color] hover:text-white shadow hover:shadow-lg">
+            <div
+              class="h-full bg-white border rounded-xl p-6 transition-all duration-300 ease-in-out hover:bg-[--primary-color] hover:text-white shadow hover:shadow-lg">
               <h4 class="font-bold mb-4">Against Cronyism & Enslaved Governments</h4>
               <p class="text-sm mb-6">
-                We stand against systemic corruption where powerful individuals manipulate governments, obtain massive debt waivers, and impose unfair tax burdens, thereby stifling genuine entrepreneurship and undermining national constitutions. We advocate for governments to be free from undue influence, serving the people, not a privileged few.
+                We stand against systemic corruption where powerful individuals manipulate governments, obtain massive
+                debt waivers, and impose unfair tax burdens, thereby stifling genuine entrepreneurship and undermining
+                national constitutions. We advocate for governments to be free from undue influence, serving the people,
+                not a privileged few.
               </p>
-              <button class="bg-white text-blue-800 font-semibold px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition">Learn More</button>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="h-full bg-white border rounded-xl p-6 transition-all duration-300 ease-in-out hover:bg-[--primary-color] hover:text-white shadow hover:shadow-lg">
-              <h4 class="font-bold mb-4">Against Cronyism & Enslaved Governments</h4>
-              <p class="text-sm mb-6">
-                We stand against systemic corruption where powerful individuals manipulate governments, obtain massive debt waivers, and impose unfair tax burdens, thereby stifling genuine entrepreneurship and undermining national constitutions. We advocate for governments to be free from undue influence, serving the people, not a privileged few.
-              </p>
-              <button class="bg-white text-blue-800 font-semibold px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition">Learn More</button>
-            </div>
-          </div>
-
-          <div class="swiper-slide">
-            <div class="h-full bg-white border rounded-xl p-6 transition-all duration-300 ease-in-out hover:bg-[--primary-color] hover:text-white shadow hover:shadow-lg">
-              <h4 class="font-bold mb-4">Against Cronyism & Enslaved Governments</h4>
-              <p class="text-sm mb-6">
-                We stand against systemic corruption where powerful individuals manipulate governments, obtain massive debt waivers, and impose unfair tax burdens, thereby stifling genuine entrepreneurship and undermining national constitutions. We advocate for governments to be free from undue influence, serving the people, not a privileged few.
-              </p>
-              <button class="bg-white text-blue-800 font-semibold px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition">Learn More</button>
+              <button
+                class="bg-white text-blue-800 font-semibold px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition">Learn
+                More</button>
             </div>
           </div>
 
 
           <div class="swiper-slide">
-            <div class="h-full bg-white border rounded-xl p-6 transition-all duration-300 ease-in-out hover:bg-[--primary-color] hover:text-white shadow hover:shadow-lg">
-              <h4 class="font-bold mb-4">Against Cronyism & Enslaved Governments</h4>
+            <div
+              class="h-full bg-white border rounded-xl p-6 transition-all duration-300 ease-in-out hover:bg-[--primary-color] hover:text-white shadow hover:shadow-lg">
+              <h4 class="font-bold mb-4">Protecting Business from Geopolitical Fallout</h4>
               <p class="text-sm mb-6">
-                We stand against systemic corruption where powerful individuals manipulate governments, obtain massive debt waivers, and impose unfair tax burdens, thereby stifling genuine entrepreneurship and undermining national constitutions. We advocate for governments to be free from undue influence, serving the people, not a privileged few.
+                We actively work to shield innocent traders and businesses from the devastating financial impacts of
+                conflicts they are not responsible for, opposing punitive trade taxes and protecting their livelihoods.
               </p>
-              <button class="bg-white text-blue-800 font-semibold px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition">Learn More</button>
+              <button
+                class="bg-white text-blue-800 font-semibold px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition">Learn
+                More</button>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div
+              class="h-full bg-white border rounded-xl p-6 transition-all duration-300 ease-in-out hover:bg-[--primary-color] hover:text-white shadow hover:shadow-lg">
+              <h4 class="font-bold mb-4">For a Multitude of Business People</h4>
+              <p class="text-sm mb-6">
+                We believe true economic strength comes from a thriving population of independent, high-quality
+                entrepreneurs, not a system that prioritizes a few large entities. Our mission is to increase the number
+                of diverse business people creating wealth and opportunity worldwide.
+              </p>
+              <button
+                class="bg-white text-blue-800 font-semibold px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition">Learn
+                More</button>
             </div>
           </div>
 
 
           <div class="swiper-slide">
-            <div class="h-full bg-white border rounded-xl p-6 transition-all duration-300 ease-in-out hover:bg-[--primary-color] hover:text-white shadow hover:shadow-lg">
-              <h4 class="font-bold mb-4">Against Cronyism & Enslaved Governments</h4>
+            <div
+              class="h-full bg-white border rounded-xl p-6 transition-all duration-300 ease-in-out hover:bg-[--primary-color] hover:text-white shadow hover:shadow-lg">
+              <h4 class="font-bold mb-4">Upholding Constitutional Dignity</h4>
               <p class="text-sm mb-6">
-                We stand against systemic corruption where powerful individuals manipulate governments, obtain massive debt waivers, and impose unfair tax burdens, thereby stifling genuine entrepreneurship and undermining national constitutions. We advocate for governments to be free from undue influence, serving the people, not a privileged few.
+                We advocate for the supremacy of national constitutions and the rule of law against leaders who seek to
+                elevate personal power through illicit means, ensuring dignity and freedom for every nation and its
+                population.
+
               </p>
-              <button class="bg-white text-blue-800 font-semibold px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition">Learn More</button>
+              <button
+                class="bg-white text-blue-800 font-semibold px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition">Learn
+                More</button>
             </div>
           </div>
-  
-          <!-- Repeat this card 4 more times (5 total) -->
-          <!-- You can duplicate and adjust content -->
+
+
+          <div class="swiper-slide">
+            <div
+              class="h-full bg-white border rounded-xl p-6 transition-all duration-300 ease-in-out hover:bg-[--primary-color] hover:text-white shadow hover:shadow-lg">
+              <h4 class="font-bold mb-4">Promoting Openness & Mutual Growth</h4>
+              <p class="text-sm mb-6">
+                We champion transparency in trade, equitable access to opportunities, and collaborative practices that
+                enrich knowledge and foster mutual growth for all.
+              </p>
+              <button
+                class="bg-white text-blue-800 font-semibold px-6 py-2 rounded-full hover:bg-blue-600 hover:text-white transition">Learn
+                More</button>
+            </div>
+          </div>
         </div>
         <br>
         <br>
-  
         <!-- Navigation Arrows -->
         <div class="swiper-button-next !text-blue-800 hover:scale-110"></div>
         <div class="swiper-button-prev !text-blue-800 hover:scale-110"></div>
-  
         <!-- Pagination Dots -->
         <div class="swiper-pagination mt-6"></div>
       </div>
@@ -373,31 +469,36 @@
   <section id="constitution" class="bg-white py-16 px-6 text-center">
     <h4 class="text-blue-700 font-semibold mb-2">The WTP Constitution: Our Foundational Document</h4>
     <h2 class="text-2xl md:text-3xl font-bold text-black mb-4">
-      Download the WTP Constitution:<br />
+      Download the World Trade Parliament Constitution<br />
       <span class="text-lg font-semibold text-black">Our Guiding Principles for a Fairer World</span>
     </h2>
     <p class="max-w-2xl mx-auto text-gray-700 mb-10">
-      The Constitution of the World Trade Parliament is the bedrock of our organization. It meticulously outlines our purpose, structure, principles, and commitment to fostering a truly free, fair, and open global economy. It also serves as a model for ethical international trade practices and the preservation of constitutional integrity worldwide.
+      The Constitution of the World Trade Parliament is the bedrock of our organization. It meticulously outlines our
+      purpose, structure, principles, and commitment to fostering a truly free, fair, and open global economy. It also
+      serves as a model for ethical international trade practices and the preservation of constitutional integrity
+      worldwide.
     </p>
-  
+
     <div class="max-w-md mx-auto bg-[--primary-color] text-white rounded-2xl px-6 py-8 shadow-lg">
       <p class="font-semibold text-sm mb-6 leading-snug">
-        We invite you to download and review our Constitution to understand the depth of our mission and the unique framework that guides our efforts
+        We invite you to download and review our Constitution to understand the depth of our mission and the unique
+        framework that guides our efforts
       </p>
       <form class="space-y-4">
         <div class="flex items-center bg-white text-black px-4 py-3 rounded-full">
           <span class="mr-2"><i class="fas fa-user"></i></span>
-          <input type="text" placeholder="Full Name" class="w-full focus:outline-none bg-transparent" />
+          <input required type="text" placeholder="Full Name" class="w-full focus:outline-none bg-transparent" />
         </div>
         <div class="flex items-center bg-white text-black px-4 py-3 rounded-full">
           <span class="mr-2"><i class="fas fa-envelope"></i></span>
-          <input type="email" placeholder="Email Address" class="w-full focus:outline-none bg-transparent" />
+          <input required type="email" placeholder="Email Address" class="w-full focus:outline-none bg-transparent" />
         </div>
         <div class="flex items-center bg-white text-black px-4 py-3 rounded-full">
           <span class="mr-2"><i class="fas fa-globe"></i></span>
           <input type="text" placeholder="Country" class="w-full focus:outline-none bg-transparent" />
         </div>
-        <button type="button" class="w-full bg-blue-500 hover:bg-blue-400 text-white py-3 font-semibold rounded-full flex items-center justify-center gap-2 transition">
+        <button type="button"
+          class="w-full bg-blue-500 hover:bg-blue-400 text-white py-3 font-semibold rounded-full flex items-center justify-center gap-2 transition">
           <i class="fas fa-download"></i> Download Constitution
         </button>
       </form>
@@ -406,53 +507,57 @@
       </p>
     </div>
   </section>
-  
-  
+
+
   <section id="join" class="bg-white py-16 px-6 text-center">
-    <h4 class="text-blue-700 font-semibold mb-2">Get Involved</h4>
+    <h4 class="text-blue-700 font-semibold mb-2">Join Us</h4>
     <h2 class="text-2xl md:text-3xl font-bold text-blue-900 mb-10">
       Be Part of the World Trade Parliament Movement
     </h2>
-  
+
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
       <!-- Card 1 -->
       <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
-        <img src="https://picsum.photos/500/300" alt="Business Networking" class="w-full h-52 object-cover" />
+        <img src="https://picsum.photos/500/300" alt="Business Networking" loading="lazy"
+          class="w-full h-52 object-cover" />
         <div class="p-6 text-left">
           <h4 class="font-semibold mb-2 text-sm text-blue-700">For Aspiring Global Entrepreneurs:</h4>
           <h3 class="font-bold text-lg mb-2">Master International Markets with WIIBA:</h3>
           <p class="text-gray-600 text-sm mb-4">
-            Learn about our unique 24-country program and how you can become a member of the Global Policy & Diplomatic Council.
+            Learn about our unique 24-country program and how you can become a member of the Global Policy & Diplomatic
+            Council.
           </p>
           <a href="#" class="text-blue-700 font-semibold hover:underline inline-flex items-center gap-1">
-            Learn More <i class="fas fa-arrow-right"></i>
+            Learn More About WIIBA Admissions <i class="fas fa-arrow-right"></i>
           </a>
         </div>
       </div>
-  
+
       <!-- Card 2 -->
       <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
-        <img src="https://picsum.photos/500/300" alt="WBIZNEX Membership" class="w-full h-52 object-cover" />
+        <img src="https://picsum.photos/500/300" alt="WBIZNEX Membership" loading="lazy"
+          class="w-full h-52 object-cover" />
         <div class="p-6 text-left">
-          <h4 class="font-semibold mb-2 text-sm text-blue-700">For Aspiring Global Entrepreneurs:</h4>
-          <h3 class="font-bold text-lg mb-2">Master International Markets with WIIBA:</h3>
+          <h4 class="font-semibold mb-2 text-sm text-blue-700">For Established Business Leaders</h4>
+          <h3 class="font-bold text-lg mb-2">Connect & Advocate with WBIZNEX</h3>
           <p class="text-gray-600 text-sm mb-4">
-            Learn about our unique 24-country program and how you can become a member of the Global Policy & Diplomatic Council.
+            Join our powerful global network and contribute your voice to the Global Business Council.
           </p>
           <a href="#" class="text-blue-700 font-semibold hover:underline inline-flex items-center gap-1">
-            Become a WBIZNEX Member  <i class="fas fa-arrow-right"></i>
+            Become a WBIZNEX Member <i class="fas fa-arrow-right"></i>
           </a>
         </div>
       </div>
-  
+
       <!-- Card 3 -->
       <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-xl transition">
-        <img src="https://picsum.photos/500/300" alt="Partner with WTP" class="w-full h-52 object-cover" />
+        <img src="https://picsum.photos/500/300" alt="Partner with WTP" loading="lazy"
+          class="w-full h-52 object-cover" />
         <div class="p-6 text-left">
-          <h4 class="font-semibold mb-2 text-sm text-blue-700">For Aspiring Global Entrepreneurs:</h4>
-          <h3 class="font-bold text-lg mb-2">Master International Markets with WIIBA:</h3>
+          <h4 class="font-semibold mb-2 text-sm text-blue-700">For Partners & Supporters</h4>
+          <h3 class="font-bold text-lg mb-2">Support Our Mission</h3>
           <p class="text-gray-600 text-sm mb-4">
-            Learn about our unique 24-country program and how you can become a member of the Global Policy & Diplomatic Council.
+            Learn how your organization or individual contribution can help us fight for a fairer global economy.
           </p>
           <a href="#" class="text-blue-700 font-semibold hover:underline inline-flex items-center gap-1">
             Partner with Us <i class="fas fa-arrow-right"></i>
@@ -461,7 +566,7 @@
       </div>
     </div>
   </section>
-  
+
 
   <!-- CONTACT -->
   <section id="contact" class="bg-white py-16 px-6">
@@ -474,20 +579,21 @@
         We’re here to answer your questions and support your journey. Reach out any time.
       </p>
     </div>
-  
+
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
       <!-- Left Column: Contact Info -->
       <div class="bg-gray-100 p-8 rounded-2xl shadow space-y-6">
         <div>
           <h3 class="text-xl font-bold text-gray-900">Direct Contact Information</h3>
           <p class="text-gray-600 text-sm mt-1">
-            We aim to respond within 24–48 hours. Please note: Response times may vary depending on your timezone or holidays.
+            We aim to respond within 24–48 hours. Please note: Response times may vary depending on your timezone or
+            holidays.
           </p>
           <p class="text-gray-500 text-sm italic mt-2">
             Your patience is appreciated as we process high volumes of inquiries across multiple regions.
           </p>
         </div>
-  
+
         <div class="space-y-4">
           <div class="flex items-start gap-4">
             <i class="fas fa-envelope text-blue-900 text-xl mt-1"></i>
@@ -498,7 +604,7 @@
               </a>
             </div>
           </div>
-  
+
           <div class="flex items-start gap-4">
             <i class="fas fa-phone text-blue-900 text-xl mt-1"></i>
             <div>
@@ -506,7 +612,7 @@
               <a href="tel:+1234567890" class="text-gray-700 hover:underline">+1 (234) 567-890</a>
             </div>
           </div>
-  
+
           <div class="flex items-start gap-4">
             <i class="fas fa-map-marker-alt text-blue-900 text-xl mt-1"></i>
             <div>
@@ -515,53 +621,64 @@
             </div>
           </div>
         </div>
-  
+
         <!-- Social Media Links -->
         <div class="pt-6 border-t border-gray-300">
           <p class="text-sm font-semibold text-gray-600 mb-3">Connect with us on social media:</p>
           <div class="flex gap-5 text-blue-900 text-2xl">
-            <a href="https://facebook.com/worldtradeparliament" target="_blank" aria-label="Facebook" class="hover:text-blue-900">
+            <a href="https://facebook.com/worldtradeparliament" target="_blank" aria-label="Facebook"
+              class="hover:text-blue-900">
               <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="https://instagram.com/worldtradeparliament" target="_blank" aria-label="Instagram" class="hover:text-pink-600">
+            <a href="https://instagram.com/worldtradeparliament" target="_blank" aria-label="Instagram"
+              class="hover:text-pink-600">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://linkedin.com/company/worldtradeparliament" target="_blank" aria-label="LinkedIn" class="hover:text-blue-600">
+            <a href="https://linkedin.com/company/worldtradeparliament" target="_blank" aria-label="LinkedIn"
+              class="hover:text-blue-600">
               <i class="fab fa-linkedin-in"></i>
             </a>
             <a href="https://x.com/worldtradeparl" target="_blank" aria-label="X" class="hover:text-gray-800">
               <i class="fab fa-x-twitter"></i>
             </a>
-            <a href="https://youtube.com/@worldtradeparliament" target="_blank" aria-label="YouTube" class="hover:text-red-600">
+            <a href="https://youtube.com/@worldtradeparliament" target="_blank" aria-label="YouTube"
+              class="hover:text-red-600">
               <i class="fab fa-youtube"></i>
             </a>
           </div>
         </div>
       </div>
-  
+
       <!-- Right Column: Form -->
       <form class="bg-white p-8 rounded-2xl shadow-lg space-y-5">
-        <input type="text" placeholder="Name" required class="w-full px-5 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 outline-none" />
-        <input type="email" placeholder="Email" required class="w-full px-5 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 outline-none" />
-        <input type="text" placeholder="Subject" required class="w-full px-5 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 outline-none" />
-        <textarea placeholder="Message" rows="5" required class="w-full px-5 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none resize-none"></textarea>
-        <button type="submit" class="w-full bg-[--primary-color] hover:bg-blue-700 text-white py-3 rounded-full font-semibold text-lg transition">
+        <input type="text" placeholder="Name" required
+          class="w-full px-5 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 outline-none" />
+        <input type="email" placeholder="Email" required
+          class="w-full px-5 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 outline-none" />
+        <input type="text" placeholder="Subject" required
+          class="w-full px-5 py-3 border border-gray-300 rounded-full focus:ring-2 focus:ring-blue-500 outline-none" />
+        <textarea placeholder="Message" rows="5" required
+          class="w-full px-5 py-3 border border-gray-300 rounded-2xl focus:ring-2 focus:ring-blue-500 outline-none resize-none"></textarea>
+        <button type="submit"
+          class="w-full bg-[--primary-color] hover:bg-blue-700 text-white py-3 rounded-full font-semibold text-lg transition">
           Send Message
         </button>
       </form>
     </div>
   </section>
-  
 
+  <!-- J A V A S C R I P T -->
+  <script src="./index.js" defer></script>
 </body>
 
 <footer class="bg-blue-900 text-white py-10 px-8">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
     <!-- Logo & About -->
     <div>
-      <img src="/path-to-your-logo.png" alt="WTP Logo" class="w-24 mb-4">
+      <img src="/path-to-your-logo.png" loading="lazy" alt="WTP Logo" class="w-24 mb-4">
       <p class="text-sm text-gray-200 mb-4">
-        World Trade Parliament is a global governance platform uniting entrepreneurs, policymakers, and businesses under one international framework.
+        World Trade Parliament is a global governance platform uniting entrepreneurs, policymakers, and businesses under
+        one international framework.
       </p>
       <div class="flex space-x-4 mt-4 text-xl">
         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f hover:text-blue-400"></i></a>
@@ -629,89 +746,5 @@
     &copy; <span id="year"></span> World Trade Parliament LLC. All Rights Reserved.
   </div>
 </footer>
-
-
-
-
-  <!-- SwiperJS Initialization -->
-  <script>
-    const swiper = new Swiper('.mySwiper', {
-      slidesPerView: 1.2,
-      spaceBetween: 20,
-      centeredSlides: true,
-      loop: true,
-      autoplay: {
-        delay: 3000, // 4 seconds between transitions
-        disableOnInteraction: false
-      },
-      speed: 1000, // 1s transition for smooth feel
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      breakpoints: {
-        640: { slidesPerView: 1.5 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
-      }
-    });
-  </script>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
-<script>
-  const slogans = [
-    "TRUE CAPITALISM.",
-    "FAIR TRADE. FREE MARKETS.",
-    "EMPOWER BUSINESS."
-  ];
-
-  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()_+-=[]{}|;:,.<>?";
-  const el = document.getElementById("animated-slogan");
-  let index = 0;
-  let interval;
-
-  function scramble(text, onComplete) {
-    let iteration = 0;
-    clearInterval(interval);
-
-    interval = setInterval(() => {
-      const scrambled = text.split("")
-        .map((char, i) => {
-          if (i < iteration) return char;
-          return chars[Math.floor(Math.random() * chars.length)];
-        })
-        .join("");
-
-      el.textContent = scrambled;
-
-      if (iteration >= text.length) {
-        clearInterval(interval);
-        setTimeout(() => {
-          index = (index + 1) % slogans.length;
-          scramble(slogans[index], onComplete);
-        }, 1500);
-      }
-
-      iteration += 1 / 2;
-    }, 40);
-  }
-
-  // Start the animation
-  scramble(slogans[index]);
-</script>
-
-
-<script>
-  AOS.init();
-</script>
-
-
 
 </html>
