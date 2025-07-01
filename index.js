@@ -49,21 +49,35 @@ scramble(slogans[index]);
 
 
 
-// Mobile Menu Toggle
-const toggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("mobile-menu");
-const links = document.querySelectorAll(".mobile-link");
 
-toggle.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-});
-
-links.forEach(link => {
-    link.addEventListener("click", () => {
-        menu.classList.add("hidden");
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    const menuLinks = document.querySelectorAll('.mobile-link');
+    const closeButton = document.getElementById('menu-close'); // optional
+  
+    menuToggle?.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     });
-});
+  
+    closeButton?.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      document.body.style.overflow = '';
+    });
+  
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        document.body.style.overflow = '';
+      });
+    });
+  });
+  
 
 
 // Initialize AOS (Animate On Scroll)
 AOS.init();
+
+

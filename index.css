@@ -25,9 +25,14 @@
   .animate-fade-in {
     animation: fade-in 1s ease-out forwards;
   }
+
+  :root {
+    --primary-color: #0b3d91;
+  }
   
   body {
     font-family: 'Inter', 'Noto Sans Bengali', sans-serif;
+    overflow-x: hidden;
   }
   
 
